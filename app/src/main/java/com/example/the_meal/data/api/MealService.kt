@@ -1,9 +1,7 @@
-package com.example.the_meal.api
+package com.example.the_meal.data.api
 
-import com.example.the_meal.data.CategoryApiModel
-import com.example.the_meal.data.MealApiModel
-import com.example.the_meal.data.MealDetails
-import com.example.the_meal.data.MealDetailsApiModel
+import com.example.the_meal.data.model.*
+import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
@@ -15,17 +13,17 @@ import retrofit2.http.Query
 interface MealService {
 
     @GET("categories.php")
-    suspend fun getAllCategories(): List<CategoryApiModel>
+    suspend fun getAllCategories(): CategoriesApiModel
 
     @GET("filter.php")
     suspend fun getMealsByCategory(
         @Query("c") strCategory: String
-    ): List<MealApiModel>
+    ): MealsApiModel
 
     @GET("lookup.php")
     suspend fun getMealDetailsByIdMeal(
         @Query("i") idMeal : String
-    ) : List<MealDetailsApiModel>
+    ) : MealDetailsApiModel
 
     companion object {
         var BASE_URL = "https://www.themealdb.com/api/json/v1/1/"

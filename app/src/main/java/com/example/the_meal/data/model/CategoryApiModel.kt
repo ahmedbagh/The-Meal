@@ -1,4 +1,4 @@
-package com.example.the_meal.data
+package com.example.the_meal.data.model
 
 data class CategoryApiModel(
     val idCategory: String,

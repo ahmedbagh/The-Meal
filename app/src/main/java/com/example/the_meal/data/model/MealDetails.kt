@@ -1,4 +1,4 @@
-package com.example.the_meal.data
+package com.example.the_meal.data.model
 
 /**
  * Data class that represents a meal details.
@@ -11,7 +11,7 @@ data class MealDetails(
     val idMeal: String,
     val strMeal: String,
     val strMealThumb: String,
-    val strCategory: Category,
+    val strCategory: String,
     val strArea: String,
     val strInstructions: String,
 )

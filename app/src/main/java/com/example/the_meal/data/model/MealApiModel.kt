@@ -1,4 +1,4 @@
-package com.example.the_meal.data
+package com.example.the_meal.data.model
 
 /**
  * Data class that represents a meal.
