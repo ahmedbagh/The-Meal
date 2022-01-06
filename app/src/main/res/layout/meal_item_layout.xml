@@ -8,7 +8,7 @@
 
     <!-- A CardView that contains a TextView -->
     <androidx.cardview.widget.CardView
-        android:id="@+id/category_card_view"
+        android:id="@+id/meal_card_view"
         android:layout_width="400dp"
         android:layout_height="250dp"
         android:layout_gravity="center"
@@ -25,13 +25,13 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/category_thumb"
+                android:id="@+id/meal_thumb"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1" />
 
             <TextView
-                android:id="@+id/title_text"
+                android:id="@+id/meal_title_text"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="4"

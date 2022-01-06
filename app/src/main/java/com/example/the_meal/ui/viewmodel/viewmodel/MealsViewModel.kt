@@ -3,33 +3,35 @@ package com.example.the_meal.ui.viewmodel.viewmodel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.the_meal.data.repository.CategoriesRepository
+import com.example.the_meal.data.repository.MealsRepository
 import com.example.the_meal.ui.viewmodel.uistate.CategoriesUiState
+import com.example.the_meal.ui.viewmodel.uistate.MealsUiState
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import java.io.IOException
 
-class CategoriesViewModel(
-    private val categoriesRepository: CategoriesRepository = CategoriesRepository()
+class MealsViewModel(
+    private val mealsRepository: MealsRepository = MealsRepository(),
+    private val strCategory: String
 ) : ViewModel() {
 
-    val uiState = MutableLiveData<CategoriesUiState>()
+    val uiState = MutableLiveData<MealsUiState>()
 
     private var fetchJob: Job? = null
 
     init {
-        fetchCategories()
+        fetchMeals()
     }
 
-    private fun fetchCategories() {
+    private fun fetchMeals() {
         fetchJob?.cancel()
         fetchJob = viewModelScope.launch {
             try {
-                val categories = categoriesRepository.fetchListOfAllCategories()
-                uiState.value = CategoriesUiState(categories = categories, isLoading = false)
+                val meals = mealsRepository.fetchListOfAllMealsByCategory(strCategory)
+                uiState.value = MealsUiState(meals = meals, isLoading = false)
             } catch (ioe: IOException) {
                 val messages = ioe.message!!
-                uiState.value = CategoriesUiState(isErr = true, errMessage = messages)
+                uiState.value = MealsUiState(isErr = true, errMessage = messages)
             }
 
         }
