@@ -12,14 +12,15 @@ import com.example.the_meal.R
 import com.example.the_meal.data.model.CategoryApiModel
 
 class CategoriesAdapter(
-    private val categories: List<CategoryApiModel>
+    private val categories: List<CategoryApiModel>,
+    private val itemClick: (String) -> Unit
 ) : RecyclerView.Adapter<CategoriesAdapter.CategoriesViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoriesViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.category_item_layout, parent, false)
 
-        return CategoriesViewHolder(view)
+        return CategoriesViewHolder(view, itemClick)
     }
 
     override fun onBindViewHolder(holder: CategoriesViewHolder, position: Int) =
@@ -27,13 +28,17 @@ class CategoriesAdapter(
 
     override fun getItemCount() = categories.size
 
-    class CategoriesViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class CategoriesViewHolder(
+        itemView: View,
+        private val itemClick: (String) -> Unit
+    ) : RecyclerView.ViewHolder(itemView) {
         fun bind(category: CategoryApiModel) {
             val textView = itemView.findViewById<TextView>(R.id.title_text)
             val imageView = itemView.findViewById<ImageView>(R.id.category_thumb)
 
             Glide.with(itemView).load(category.strCategoryThumb).into(imageView);
             textView.text = category.strCategory
+            itemView.setOnClickListener { itemClick(category.strCategory) }
         }
     }
 

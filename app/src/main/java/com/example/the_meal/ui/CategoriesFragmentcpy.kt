@@ -13,7 +13,7 @@ import com.example.the_meal.R
 import com.example.the_meal.ui.adapter.CategoriesAdapter
 import com.example.the_meal.ui.viewmodel.viewmodel.CategoriesViewModel
 
-class CategoriesFragment : AppCompatActivity() {
+class CategoriesFragmentcpy : AppCompatActivity() {
 
     private val TAG = "MyActivity"
 
