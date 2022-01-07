@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/categoriesFragment"
-        android:name="com.example.the_meal.ui.CategoriesFragment"
+        android:name="com.ahmedbagh.the_meal.ui.CategoriesFragment"
         android:label="categories_fragment"
         tools:layout="@layout/categories_fragment" >
         <action
@@ -18,7 +18,7 @@
     </fragment>
     <fragment
         android:id="@+id/mealsFragment"
-        android:name="com.example.the_meal.ui.MealsFragment"
+        android:name="com.ahmedbagh.the_meal.ui.MealsFragment"
         android:label="MealsFragment" >
         <argument
             android:name="strCategory"
@@ -31,7 +31,7 @@
     </fragment>
     <fragment
         android:id="@+id/mealDetailsFragment"
-        android:name="com.example.the_meal.ui.MealDetailsFragment"
+        android:name="com.ahmedbagh.the_meal.ui.MealDetailsFragment"
         android:label="meal_details_fragment"
         tools:layout="@layout/meal_details_fragment" >
         <argument

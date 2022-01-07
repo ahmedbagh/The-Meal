@@ -9,7 +9,7 @@
 
         <variable
             name="mealDetails"
-            type="com.example.the_meal.data.model.MealDetails" />
+            type="com.ahmedbagh.the_meal.data.model.MealDetails" />
     </data>
 
 
