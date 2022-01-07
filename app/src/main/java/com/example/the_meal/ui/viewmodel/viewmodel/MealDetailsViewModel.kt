@@ -5,7 +5,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.the_meal.data.repository.MealDetailsRepository
 import com.example.the_meal.ui.viewmodel.uistate.MealDetailsUiState
-import com.example.the_meal.ui.viewmodel.uistate.MealsUiState
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import java.io.IOException

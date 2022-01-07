@@ -3,7 +3,6 @@ package com.example.the_meal.ui.factory
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.the_meal.ui.viewmodel.viewmodel.MealDetailsViewModel
-import com.example.the_meal.ui.viewmodel.viewmodel.MealsViewModel
 
 class MealDetailsViewModelFactory(
     private val idMeal: String

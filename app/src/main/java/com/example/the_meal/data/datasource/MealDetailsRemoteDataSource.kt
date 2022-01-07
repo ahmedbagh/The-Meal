@@ -1,7 +1,6 @@
 package com.example.the_meal.data.datasource
 
 import com.example.the_meal.data.api.MealService
-import com.example.the_meal.data.model.MealApiModel
 import com.example.the_meal.data.model.MealDetails
 
 class MealDetailsRemoteDataSource(

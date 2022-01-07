@@ -4,7 +4,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.the_meal.data.repository.MealsRepository
-import com.example.the_meal.ui.viewmodel.uistate.CategoriesUiState
 import com.example.the_meal.ui.viewmodel.uistate.MealsUiState
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
