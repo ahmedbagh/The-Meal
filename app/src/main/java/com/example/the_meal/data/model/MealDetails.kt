@@ -8,10 +8,10 @@ package com.example.the_meal.data.model
  * [here](https://www.themealdb.com/api.php).
  */
 data class MealDetails(
-    val idMeal: String,
-    val strMeal: String,
-    val strMealThumb: String,
-    val strCategory: String,
-    val strArea: String,
-    val strInstructions: String,
+    val idMeal: String = "",
+    val strMeal: String = "",
+    val strMealThumb: String = "",
+    val strCategory: String = "",
+    val strArea: String = "",
+    val strInstructions: String = "",
 )

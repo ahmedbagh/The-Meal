@@ -29,7 +29,7 @@ class CategoriesViewModel(
                 uiState.value = CategoriesUiState(categories = categories, isLoading = false)
             } catch (ioe: IOException) {
                 val messages = ioe.message!!
-                uiState.value = CategoriesUiState(isErr = true, errMessage = messages)
+                uiState.value = CategoriesUiState(isLoading = false, isErr = true, errMessage = messages)
             }
 
         }

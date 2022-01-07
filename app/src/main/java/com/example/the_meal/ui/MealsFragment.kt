@@ -3,6 +3,7 @@ package com.example.the_meal.ui
 import android.os.Bundle
 import android.view.View
 import android.widget.ProgressBar
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -11,11 +12,8 @@ import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.the_meal.R
-import com.example.the_meal.ui.adapter.CategoriesAdapter
 import com.example.the_meal.ui.adapter.MealsAdapter
 import com.example.the_meal.ui.factory.MealsViewModelFactory
-import com.example.the_meal.ui.viewmodel.uistate.MealsUiState
-import com.example.the_meal.ui.viewmodel.viewmodel.CategoriesViewModel
 import com.example.the_meal.ui.viewmodel.viewmodel.MealsViewModel
 
 class MealsFragment : Fragment(R.layout.meals_fragment) {
@@ -28,6 +26,8 @@ class MealsFragment : Fragment(R.layout.meals_fragment) {
 
         val mealsRecyclerView = view.findViewById<RecyclerView>(R.id.meals_recyclerView)
         val mealsProgressBar = view.findViewById<ProgressBar>(R.id.meals_progressbar)
+        val mealCategory = view.findViewById<TextView>(R.id.meal_category_str)
+        mealCategory.text = args.strCategory
 
         mealsRecyclerView.layoutManager = LinearLayoutManager(context)
 
@@ -36,7 +36,8 @@ class MealsFragment : Fragment(R.layout.meals_fragment) {
 
         viewModel.uiState.observe(this, Observer {
             mealsRecyclerView.adapter = MealsAdapter(it.meals) { idMeal ->
-
+                val action = MealsFragmentDirections.actionMealsFragmentToMealDetailsFragment(idMeal)
+                findNavController().navigate(action)
             }
 
             mealsRecyclerView.visibility = visibilityStatus(it.isLoading)

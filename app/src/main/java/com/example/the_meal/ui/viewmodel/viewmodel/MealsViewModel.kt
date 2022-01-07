@@ -31,7 +31,7 @@ class MealsViewModel(
                 uiState.value = MealsUiState(meals = meals, isLoading = false)
             } catch (ioe: IOException) {
                 val messages = ioe.message!!
-                uiState.value = MealsUiState(isErr = true, errMessage = messages)
+                uiState.value = MealsUiState(isLoading = false, isErr = true, errMessage = messages)
             }
 
         }

@@ -21,5 +21,17 @@
         <argument
             android:name="strCategory"
             app:argType="string" />
+        <action
+            android:id="@+id/action_mealsFragment_to_mealDetailsFragment"
+            app:destination="@id/mealDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mealDetailsFragment"
+        android:name="com.example.the_meal.ui.MealDetailsFragment"
+        android:label="meal_details_fragment"
+        tools:layout="@layout/meal_details_fragment" >
+        <argument
+            android:name="idMeal"
+            app:argType="string" />
     </fragment>
 </navigation>
